@@ -1,0 +1,22 @@
+2024-07-12T15:21:44.970Z [error]: ReferenceError: newt is not defined
+    at D:\nodeJs\my-node-project\4_http_and_webServer\4_3_error_handling\4_3_4_logging_using_winston.js:25:5
+    at Layer.handle [as handle_request] (D:\nodeJs\my-node-project\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\nodeJs\my-node-project\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\nodeJs\my-node-project\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\nodeJs\my-node-project\node_modules\express\lib\router\layer.js:95:5)
+    at D:\nodeJs\my-node-project\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\nodeJs\my-node-project\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\nodeJs\my-node-project\node_modules\express\lib\router\index.js:280:10)
+    at SendStream.error (D:\nodeJs\my-node-project\node_modules\serve-static\index.js:121:7)
+    at SendStream.emit (node:events:519:28)
+2024-07-12T15:22:23.529Z [error]: Error: Something went wrong
+    at D:\nodeJs\my-node-project\4_http_and_webServer\4_3_error_handling\4_3_4_logging_using_winston.js:23:17
+    at Layer.handle [as handle_request] (D:\nodeJs\my-node-project\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\nodeJs\my-node-project\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\nodeJs\my-node-project\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\nodeJs\my-node-project\node_modules\express\lib\router\layer.js:95:5)
+    at D:\nodeJs\my-node-project\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\nodeJs\my-node-project\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\nodeJs\my-node-project\node_modules\express\lib\router\index.js:280:10)
+    at SendStream.error (D:\nodeJs\my-node-project\node_modules\serve-static\index.js:121:7)
+    at SendStream.emit (node:events:519:28)

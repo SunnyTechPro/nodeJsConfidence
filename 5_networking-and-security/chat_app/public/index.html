@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chat Application</title>
+    <script>
+        let ws;
+
+        function login() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            fetch('/auth/login', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ username, password })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.token) {
+                    ws = new WebSocket(`ws://localhost:3000?token=${data.token}`);
+                    ws.onmessage = (event) => {
+                        const msg = JSON.parse(event.data);
+                        const chat = document.getElementById('chat');
+                        chat.innerHTML += `
+                            <p>
+                                <strong>${msg.user}:</strong>${msg.messgae} <em>${msg.timestamp}</em>
+                            </p>
+                        ` 
+                    };
+                } else {
+                    alert('Login failed');
+                }
+            });
+        }
+
+        function sendMessage() {
+            const message = document.getElementById('message').value;
+            ws.send(JSON.stringify({ message }));
+            document.getElementById('message').value ='';
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <h1>Login</h1>
+        <input type="text" id="username" placeholder="Username">
+        <input type="password" id="password" placeholder="Password">
+        <button onclick="login()">Login</button>
+    </div>
+    <div>
+        <h1>Chat</h1>
+        <div id="chat"></div>
+        <input type="text" id="message" placeholder="Type a message">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,5 @@
+# configure
+.env
+
+# SSL
+.pem
